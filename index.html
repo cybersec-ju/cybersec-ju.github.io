@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CyberJU - Den officiella studentföreningen för cybersäkerhet på JU (Jönköping University).">
+    <meta name="description" content="CyberJU - Den officiella studentföreningen för cybersäkerhet på JU.">
     <title>>CyberJU_ | Cybersäkerhet på JU</title>
     
-    <!-- Importerar Fira Code från Google Fonts för bättre läsbarhet -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
+        @font-face {
+            font-family: 'Fira Code';
+            src: url('fonts/FiraCode-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Fira Code';
+            src: url('fonts/FiraCode-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
         :root {
             --bg-color: #050505;
             --text-main: #00ff41;
@@ -35,7 +46,6 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-secondary);
-            /* Uppdaterat typsnitt för bättre läsbarhet */
             font-family: 'Fira Code', Consolas, monospace;
             line-height: 1.6;
             padding: 0 20px;
@@ -109,7 +119,7 @@
         }
 
         .nav-links a::before {
-            content: "./";
+            content: "> ";
             color: var(--text-muted);
         }
 
@@ -199,14 +209,6 @@
             margin-right: 10px;
         }
 
-        .discord-widget {
-            margin-top: 20px;
-            width: 100%;
-            height: 400px;
-            border: none;
-            border-radius: 8px;
-        }
-
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -235,8 +237,8 @@
         <nav aria-label="Huvudnavigation">
             <a href="#hero" class="logo" aria-label="Hem">>CyberJU<span class="blink">_</span></a>
             <div class="nav-links">
-                <a href="#about">Om_oss</a>
-                <a href="#resources">Kom_igång</a>
+                <a href="#about">Om oss</a>
+                <a href="#resources">Kom igång</a>
                 <a href="#community">Discord</a>
                 <a href="#events">Evenemang</a>
                 <a href="#sponsors">Sponsorer</a>
@@ -247,10 +249,10 @@
     <main>
         <section id="hero">
             <div class="status-badge" role="status">STATUS: TOPP 5 I SÄKERHETS-SM</div>
-            <h1>root@cyberju:~# whoami</h1>
+            <h1>> CyberJU</h1>
             <p>Den officiella studentföreningen för cybersäkerhet på JU (Jönköping University).</p>
             <div class="btn-container">
-                <a href="#community" class="btn">[ Gå med i Discord ]</a>
+                <a href="DIN_DISCORD_INBJUDNINGSLÄNK_HÄR" class="btn">[ Gå med i Discord ]</a>
                 <a href="https://ctf.cyberju.se/" target="_blank" rel="noopener noreferrer" class="btn">[ Till CTF-portalen ]</a>
             </div>
         </section>
@@ -263,10 +265,9 @@
             <br>
             <h3>Styrelsen</h3>
             <ul>
-                <li>Ordförande: </li>
-                <li>CTF Lead: </li>
-                <li>Hackathon Lead: </li>
-                <li>Workshop Lead: </li>
+                <li>Ordförande: [Namn]</li>
+                <li>CTF Lead: [Namn]</li>
+                <li>[Roll]: [Namn]</li>
             </ul>
         </section>
 
@@ -275,7 +276,7 @@
             <p>Att börja med cybersäkerhet kan verka överväldigande, men vi hjälper dig från noll.</p>
             
             <h3>Vad är en CTF?</h3>
-            <p>CTF (Capture The Flag) är en tävlingsform där man löser tekniska utmaningar (exempelvis inom kryptografi eller webbsäkerhet) för att hitta en dold textsträng ("flaggan"). Det är det snabbaste sättet att lära sig tillämpad IT-säkerhet.</p>
+            <p>CTF är en tävlingsform där man löser tekniska utmaningar för att hitta en dold textsträng ("flaggan"). Det är det snabbaste sättet att lära sig tillämpad IT-säkerhet.</p>
             
             <h3>Användbara resurser</h3>
             <ul>
@@ -287,13 +288,14 @@
 
         <section id="community">
             <h2>> Discord</h2>
-            <p>Vår primära plattform. Här diskuterar vi utmaningar, hittar lagkamrater och delar nyheter.</p>
-            <!-- server id för discord -->
-            <iframe class="discord-widget" src="https://discord.com/widget?id=1197845152069328896&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            <p>Discord är vår primära plattform. Här diskuterar vi utmaningar, hittar lagkamrater och delar nyheter.</p>
+            <div class="btn-container">
+                <a href="DIN_DISCORD_INBJUDNINGSLÄNK_HÄR" class="btn">[ Anslut till servern ]</a>
+            </div>
         </section>
 
         <section id="events">
-            <h2>> Kalender</h2>
+            <h2>> Evenemang</h2>
             <p>Här publicerar vi kommande träffar, workshops och tävlingar.</p>
             <ul>
                 <li><strong>[Snart]</strong> - Gemensam tävlingskväll: Säkerhets-SM på campus</li>
@@ -302,8 +304,8 @@
         </section>
 
         <section id="sponsors">
-            <h2>> Samarbeten</h2>
-            <p>CyberJU samlar de mest drivna IT-säkerhetstalangerna på Jönköping University. Våra medlemmar bevisar kontinuerligt sin kompetens, vilket vår nuvarande topp 5-placering i Säkerhets-SM är ett starkt bevis på.</p>
+            <h2>> Sponsorer</h2>
+            <p>CyberJU samlar de mest drivna IT-säkerhetstalangerna på JU (Jönköping University). Våra medlemmar bevisar kontinuerligt sin kompetens, vilket vår nuvarande topp 5-placering i Säkerhets-SM är ett starkt bevis på.</p>
             <br>
             <p>Vi söker företagssponsorer för att finansiera serverdrift för våra CTF-miljöer, priser och evenemang. Som sponsor får ni direkt employer branding och kontakt med framtidens experter inom branschen.</p>
             <br>
@@ -312,7 +314,7 @@
     </main>
 
     <footer>
-        EOF. © 2026 CyberJU. All rights reserved.
+        © 2026 CyberJU. All rights reserved.
     </footer>
 
 </body>
