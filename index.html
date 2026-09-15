@@ -1,27 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberJU</title>
+    <meta name="description" content="CyberJU - Den officiella studentföreningen för cybersäkerhet på JU (Jönköping University).">
+    <title>>CyberJU_ | Cybersäkerhet på JU</title>
     <style>
         :root {
-            color-scheme: dark light;
+            --bg-color: #050505;
+            --text-main: #00ff41;
+            --text-muted: #888888;
+            --text-secondary: #e0e0e0;
+            --accent: #008f11;
+            --nav-height: 70px;
+        }
+
+        /* Reset och grundinställningar */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-height) + 20px); /* Förhindrar att nav täcker innehåll */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-secondary);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Typografi och CRT-effekt */
+        h1, h2, h3 {
+            color: var(--text-main);
+            font-weight: normal;
+            text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+        h2 { font-size: clamp(1.2rem, 4vw, 1.8rem); margin-top: 1.5rem; }
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+
+        a:not(.btn):not(.logo):hover {
+            background-color: rgba(0, 255, 65, 0.1);
+            text-decoration: underline dashed;
+            text-underline-offset: 4px;
+        }
+
+        /* Tillgänglighet: Tangentbordsnavigering */
+        a:focus-visible, .btn:focus-visible {
+            outline: 2px solid var(--text-main);
+            outline-offset: 4px;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: var(--nav-height);
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--accent);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a::before {
+            content: "./";
+            color: var(--text-muted);
+        }
+
+        /* Sektioner och Layout */
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: calc(var(--nav-height) + 40px);
+        }
+
+        section {
+            padding: 40px 0;
+            border-bottom: 1px dashed #333;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* Hero */
+        #hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: none;
+        }
+
+        .status-badge {
+            align-self: flex-start;
+            background: var(--text-main);
+            color: var(--bg-color);
+            padding: 4px 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border-radius: 2px;
+        }
+
+        /* Blinking Cursor */
+        .blink {
+            animation: blinker 1.2s step-end infinite;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        /* Knappar */
+        .btn-container {
+            margin-top: 2rem;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+            text-transform: uppercase;
+            font-weight: bold;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--text-main);
+            color: var(--bg-color);
+        }
+
+        /* Listor */
+        ul {
+            list-style-type: none;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            display: flex;
+        }
+
+        ul li::before {
+            content: ">";
+            color: var(--text-main);
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #111;
+            margin-top: auto;
+        }
+
+        /* Responsivitet för mindre skärmar */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+            html {
+                scroll-padding-top: 120px; /* Justera offset för högre mobilmeny */
+            }
         }
     </style>
 </head>
 <body>
-    <nav> 
-        <a href="#info">Information</a>
-        <a href="#socialt">Sociala medier</a>
-    </nav>
 
-    <section id="info">
-        <h1>Information om CyberJU</h1>
-        <p> CyberJU är den officiella studentföreningen för cybersäkerhet på Jönköping University.
-Vi är en samlingsplats för studenter som vill lära sig datasäkerhet och IT i praktiken, utanför de vanliga studierna. Vår verksamhet bygger på Tävlingar inom CTF, Hackathons, Praktiska workshops inom etisk hackning
-Föreningen är öppen för alla studenter på JU. Det krävs ingen tidigare erfarenhet för att vara med, vi välkomnar både nybörjare och experter. Målet är att bygga en gemenskap, lära sig försvara och attackera system, samt skapa nätverk med företag i branschen.</p>
-    </section>
-    
+    <header>
+        <nav aria-label="Huvudnavigation">
+            <a href="#hero" class="logo" aria-label="Hem">>CyberJU<span class="blink">_</span></a>
+            <div class="nav-links">
+                <a href="#about">Om_oss</a>
+                <a href="#resources">Kom_igång</a>
+                <a href="#events">Evenemang</a>
+                <a href="#sponsors">Sponsorer</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="status-badge" role="status">STATUS: TOPP 5 I SÄKERHETS-SM</div>
+            <h1>root@cyberju:~# whoami</h1>
+            <p>Den officiella studentföreningen för cybersäkerhet på JU (Jönköping University).</p>
+            <div class="btn-container">
+                <a href="LÄNK_TILL_DISCORD" class="btn">[ Gå med i Discord ]</a>
+                <a href="LÄNK_TILL_CTF" class="btn">[ Till CTF-portalen ]</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>> ./om_föreningen.sh</h2>
+            <p>CyberJU bygger praktisk kompetens inom IT (Information Technology) och cybersäkerhet utanför föreläsningssalen. Vi arrangerar tävlingar i CTF (Capture The Flag), hackathons och workshops.</p>
+            <br>
+            <p style="color: var(--text-main); font-weight: bold;">[!] VIKTIGT: Inga förkunskaper krävs. Vi välkomnar alla studenter, från helt nybörjare till experter.</p>
+            <br>
+            <h3>Styrelsen</h3>
+            <ul>
+                <li>Ordförande: [Ditt Namn]</li>
+                <li>CTF Lead: [Namn]</li>
+                <li>[Roll]: [Namn]</li>
+            </ul>
+        </section>
+
+        <section id="resources">
+            <h2>> ./kom_igång.sh</h2>
+            <p>Att börja med cybersäkerhet kan verka överväldigande, men vi hjälper dig från noll.</p>
+            
+            <h3>Vad är en CTF?</h3>
+            <p>CTF (Capture The Flag) är en tävlingsform där man löser tekniska utmaningar (exempelvis inom kryptografi eller webbsäkerhet) för att hitta en dold textsträng ("flaggan"). Det är det snabbaste sättet att lära sig tillämpad IT-säkerhet.</p>
+            
+            <h3>Användbara resurser</h3>
+            <ul>
+                <li><a href="https://sakerhetssm.se" target="_blank" rel="noopener noreferrer">Säkerhets-SM (Börja med introduktionskategorin)</a></li>
+                <li><a href="https://picoctf.org" target="_blank" rel="noopener noreferrer">PicoCTF - Utmärkt för nybörjare</a></li>
+                <li><a href="https://tryhackme.com" target="_blank" rel="noopener noreferrer">TryHackMe - Praktiska interaktiva labbar</a></li>
+            </ul>
+        </section>
+
+        <section id="events">
+            <h2>> cat kalender.txt</h2>
+            <p>Här publicerar vi kommande träffar, workshops och tävlingar.</p>
+            <ul>
+                <li><strong>[Snart]</strong> - Gemensam tävlingskväll: Säkerhets-SM på campus</li>
+                <li><strong>[Planeras]</strong> - Workshop: Introduktion till etisk hackning</li>
+            </ul>
+        </section>
+
+        <section id="sponsors">
+            <h2>> ./samarbeten.sh</h2>
+            <p>CyberJU samlar de mest drivna IT-säkerhetstalangerna på JU (Jönköping University). Våra medlemmar bevisar kontinuerligt sin kompetens, vilket vår nuvarande topp 5-placering i Säkerhets-SM är ett starkt bevis på.</p>
+            <br>
+            <p>Vi söker företagssponsorer för att finansiera serverdrift för våra CTF-miljöer, priser och evenemang. Som sponsor får ni direkt employer branding och kontakt med framtidens experter inom branschen.</p>
+            <br>
+            <p>Kontakt för företag: <a href="mailto:contact@cyberju.se">contact@cyberju.se</a></p>
+        </section>
+    </main>
+
+    <footer>
+        EOF. © 2026 CyberJU. All rights reserved.
+    </footer>
+
 </body>
 </html>
