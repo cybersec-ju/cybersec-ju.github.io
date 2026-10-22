@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CyberJU - The official student association for cybersecurity at JU.">
-    <title>>CyberJU_ | Cybersecurity at JU</title>
+    <title>CyberJU</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     
     <style>
@@ -27,10 +27,10 @@
         :root {
             --bg-color: #050505;
             --text-main: #00ff41;
-            --text-muted: #888888;
+            --text-muted: #a0a0a0;
             --text-secondary: #e0e0e0;
             --accent: #008f11;
-            --nav-height: 70px;
+            --nav-height: 88px;
         }
 
         *, *::before, *::after {
@@ -40,6 +40,7 @@
         }
 
         html {
+            font-size: 112.5%;
             scroll-behavior: smooth;
             scroll-padding-top: calc(var(--nav-height) + 20px);
         }
@@ -48,7 +49,7 @@
             background-color: var(--bg-color);
             color: var(--text-secondary);
             font-family: 'JLSDataGothic', Consolas, monospace;
-            line-height: 1.6;
+            line-height: 1.7;
             padding: 0 20px;
             display: flex;
             flex-direction: column;
@@ -114,8 +115,8 @@
 
         .logo .logo-flag {
             display: block;
-            width: 48px;
-            height: 48px;
+            width: 64px;
+            height: 64px;
             overflow: visible;
         }
 
@@ -178,6 +179,10 @@
             border-bottom: none;
         }
 
+        #hero p {
+            font-size: 1.15rem;
+        }
+
         .blink {
             animation: blinker 1.2s step-end infinite;
         }
@@ -235,21 +240,31 @@
         footer {
             text-align: center;
             padding: 40px 20px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--text-muted);
             border-top: 1px solid #111;
             margin-top: auto;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 720px) {
             nav {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
                 padding: 15px 20px;
             }
-            html {
-                scroll-padding-top: 120px;
+            :root {
+                --nav-height: 150px;
+            }
+            .logo .logo-flag {
+                width: 44px;
+                height: 44px;
+            }
+            .nav-links {
+                gap: 6px 14px;
+            }
+            .nav-links a {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -289,14 +304,14 @@
 
         <section id="about">
             <h2>> About the association</h2>
-            <p>CyberJU builds practical skills in IT and cybersecurity outside the lecture hall. We organize CTF competitions, hackathons and workshops. We're also proud to have placed in the top 5 in SäkerhetsSM.</p>
+            <p>CyberJU builds practical skills in IT and cybersecurity outside the lecture hall. We organize CTF competitions, hackathons and workshops. We're also proud to have placed in the top 5 in Säkerhets-SM.</p>
             <br>
             <p style="color: var(--text-main); font-weight: bold;">[!] No prior experience required. We welcome all students, from complete beginners to experts.</p>
             <br>
             <h3>The board</h3>
             <ul>
-                <li>President: Mohamed Khodr</li>
-                <li></li>
+                <li>Chairperson: [Name]</li>
+                <li>CTF Lead: [Name]</li>
                 <li>[Role]: [Name]</li>
                  <li>more roles coming soon</li>
             </ul>
