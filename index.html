@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CyberJU - The official student association for cybersecurity at JU.">
     <title>>CyberJU_ | Cybersecurity at JU</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     
     <style>
         @font-face {
@@ -107,9 +108,38 @@
         }
 
         .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--text-main);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo .logo-flag {
+            display: block;
+            width: 48px;
+            height: 48px;
+            overflow: visible;
+        }
+
+        .flag-cloth {
+            animation: wave 4s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg) skewY(0deg); }
+            25%      { transform: rotate(-3.75deg) skewY(5deg); }
+            50%      { transform: rotate(1.9deg) skewY(-3.75deg); }
+            75%      { transform: rotate(-1.9deg) skewY(2.5deg); }
+        }
+
+        .hero-logo {
+            margin-bottom: 1.5rem;
+            text-shadow: none;
+        }
+
+        .hero-logo svg {
+            display: block;
+            width: min(100%, 560px);
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(117, 251, 98, 0.3));
         }
 
         .nav-links {
@@ -154,6 +184,10 @@
 
         @keyframes blinker {
             50% { opacity: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .blink, .flag-cloth { animation: none; }
         }
 
         .btn-container {
@@ -221,10 +255,18 @@
     </style>
 </head>
 <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><path id="wm-text" fill="#75FB62" d="M55.0 -470.0Q55.0 -483.0 95.0 -518.5Q135.0 -554.0 151.5 -554.0Q168.0 -554.0 301.5 -438.5Q435.0 -323.0 435.0 -300.0Q435.0 -277.0 301.5 -161.5Q168.0 -46.0 152.0 -46.0Q136.0 -46.0 95.5 -82.0Q55.0 -118.0 55.0 -130.0Q55.0 -134.0 92.0 -163.0Q223.0 -264.0 255.0 -300.0Q223.0 -336.0 139.0 -401.0Q55.0 -466.0 55.0 -470.0Z M515.0 -303.0V-397.0Q515.0 -522.0 535.0 -557.0Q555.0 -592.0 620.5 -652.0Q686.0 -712.0 718.0 -712.0Q773.0 -712.0 844.0 -648.5Q915.0 -585.0 934.0 -509.0L823.0 -432.0Q807.0 -486.0 772.0 -531.5Q737.0 -577.0 723.0 -577.0Q698.0 -577.0 666.0 -528.0Q653.0 -509.0 653.0 -397.0V-303.0Q653.0 -188.0 666.0 -172.0Q698.0 -123.0 723.0 -123.0Q737.0 -123.0 772.0 -162.5Q807.0 -202.0 823.0 -250.0L934.0 -172.0Q915.0 -103.0 844.0 -45.5Q773.0 12.0 718.0 12.0Q686.0 12.0 620.5 -48.0Q555.0 -108.0 535.0 -143.0Q515.0 -178.0 515.0 -303.0Z M1270.0 -539.0H1402.0V-33.0Q1402.0 86.0 1387.0 115.0Q1372.0 144.0 1308.5 197.0Q1245.0 250.0 1212.0 250.0Q1179.0 250.0 1127.0 215.5Q1075.0 181.0 1049.0 136.0L1152.0 65.0L1163.0 78.0Q1199.0 125.0 1212.5 125.0Q1226.0 125.0 1241.5 112.0Q1257.0 99.0 1263.5 86.0Q1270.0 73.0 1270.0 -8.0V-62.0Q1214.0 -8.0 1186.5 -8.0Q1159.0 -8.0 1096.5 -63.5Q1034.0 -119.0 1034.0 -173.0V-346.0Q1034.0 -397.0 1022.0 -425.0Q1010.0 -453.0 984.0 -474.0L1094.0 -551.0Q1166.0 -494.0 1166.0 -389.0V-187.0Q1166.0 -170.0 1185.0 -151.5Q1204.0 -133.0 1218.0 -133.0Q1232.0 -133.0 1270.0 -174.0Z M1522.0 0.0V-546.0Q1522.0 -597.0 1510.0 -624.0Q1498.0 -651.0 1472.0 -673.0L1582.0 -750.0Q1654.0 -693.0 1654.0 -589.0V-498.0Q1714.0 -551.0 1740.5 -551.0Q1767.0 -551.0 1821.5 -497.5Q1876.0 -444.0 1884.0 -419.0Q1895.0 -394.0 1895.0 -269.5Q1895.0 -145.0 1884.0 -120.0Q1876.0 -95.0 1821.5 -41.5Q1767.0 12.0 1743.0 12.0Q1708.0 12.0 1631.0 -61.0L1620.0 0.0ZM1660.0 -389.0Q1652.0 -372.0 1652.0 -268.5Q1652.0 -165.0 1659.0 -152.5Q1666.0 -140.0 1687.5 -126.5Q1709.0 -113.0 1720.0 -113.0Q1731.0 -113.0 1743.5 -126.0Q1756.0 -139.0 1762.0 -153.0Q1768.0 -167.0 1768.0 -269.5Q1768.0 -372.0 1762.0 -385.5Q1756.0 -399.0 1743.5 -412.5Q1731.0 -426.0 1720.5 -426.0Q1710.0 -426.0 1688.5 -412.5Q1667.0 -399.0 1660.0 -389.0Z M2329.0 -271.0V-235.0H2087.0Q2087.0 -175.0 2102.0 -140.0Q2107.0 -128.0 2120.0 -115.5Q2133.0 -103.0 2147.0 -103.0Q2161.0 -103.0 2182.0 -127.0Q2203.0 -151.0 2215.0 -185.0L2318.0 -112.0Q2291.0 -62.0 2235.5 -25.0Q2180.0 12.0 2146.0 12.0Q2112.0 12.0 2047.5 -41.0Q1983.0 -94.0 1969.0 -123.5Q1955.0 -153.0 1955.0 -269.5Q1955.0 -386.0 1969.0 -415.5Q1983.0 -445.0 2047.5 -498.0Q2112.0 -551.0 2142.0 -551.0Q2172.0 -551.0 2236.5 -498.0Q2301.0 -445.0 2315.0 -415.5Q2329.0 -386.0 2329.0 -271.0ZM2087.0 -330.0H2201.0Q2198.0 -383.0 2190.5 -396.5Q2183.0 -410.0 2167.5 -423.0Q2152.0 -436.0 2138.5 -436.0Q2125.0 -436.0 2108.0 -409.5Q2091.0 -383.0 2087.0 -330.0Z M2566.0 0.0H2434.0V-345.0Q2434.0 -396.0 2421.5 -424.5Q2409.0 -453.0 2384.0 -474.0L2494.0 -551.0Q2530.0 -521.0 2549.0 -481.0Q2623.0 -551.0 2653.0 -551.0Q2673.0 -551.0 2714.0 -514.0Q2755.0 -477.0 2762.0 -433.0L2655.0 -356.0Q2654.0 -380.0 2643.5 -403.0Q2633.0 -426.0 2625.0 -426.0Q2608.0 -426.0 2566.0 -384.0Z M3013.0 -700.0H3151.0V-303.0Q3151.0 -178.0 3131.0 -143.0Q3111.0 -108.0 3045.5 -48.0Q2980.0 12.0 2943.5 12.0Q2907.0 12.0 2849.0 -31.0Q2791.0 -74.0 2762.0 -132.0L2873.0 -210.0Q2874.0 -209.0 2881.5 -198.5Q2889.0 -188.0 2895.0 -180.5Q2901.0 -173.0 2910.0 -164.0Q2929.0 -143.0 2942.5 -143.0Q2956.0 -143.0 2973.0 -159.5Q2990.0 -176.0 3001.5 -194.0Q3013.0 -212.0 3013.0 -303.0Z M3685.0 -700.0V-291.0Q3685.0 -186.0 3674.0 -160.0Q3657.0 -119.0 3585.5 -53.5Q3514.0 12.0 3478.0 12.0Q3442.0 12.0 3370.5 -53.5Q3299.0 -119.0 3282.0 -160.0Q3271.0 -186.0 3271.0 -291.0V-436.0Q3271.0 -517.0 3259.5 -550.0Q3248.0 -583.0 3211.0 -628.0L3331.0 -712.0Q3363.0 -691.0 3386.0 -630.5Q3409.0 -570.0 3409.0 -486.0V-291.0Q3409.0 -209.0 3417.0 -190.5Q3425.0 -172.0 3444.5 -151.5Q3464.0 -131.0 3478.0 -131.0Q3492.0 -131.0 3511.5 -151.5Q3531.0 -172.0 3539.0 -190.5Q3547.0 -209.0 3547.0 -291.0V-700.0Z"/><path id="wm-cursor" fill="#75FB62" d="M3790.0 250.0V170.0H4163.0V250.0Z"/></defs></svg>
 
     <header>
         <nav aria-label="Main navigation">
-            <a href="#hero" class="logo" aria-label="Home">>CyberJU<span class="blink">_</span></a>
+            <a href="#hero" class="logo" aria-label="CyberJU, home"><svg class="logo-flag" viewBox="0 0 1024 1024" aria-hidden="true" focusable="false"><g transform="translate(512 512) scale(0.471) translate(-1013 -950)"><g transform="translate(322 760)"><g class="flag-cloth"><g transform="translate(-322 -760)">
+<path fill="none" stroke="#75FB62" stroke-width="38" stroke-linecap="round" stroke-linejoin="round" d="M403.0,393.0L587.0,801.0M665.9,848.7L998.1,829.3M660.5,876.1L854.5,968.9M1016.7,867.8L942.3,951.2M1082.4,874.3L1154.6,996.7M916.1,1047.9L947.9,1206.1M1142.7,1083.9L999.3,1222.1M1233.8,1021.5L1435.2,928.5M1458.1,953.5L1308.9,1212.5M1521.2,948.6L1580.8,1022.4M1567.6,1094.2L1329.4,1232.8M1015.0,1261.0L1225.0,1261.0M1698.5,663.6L1818.5,796.4M1815.4,876.6L1656.6,1027.4M1515.5,857.4L1631.5,669.6M1146.2,402.9L1179.8,989.1M1152.9,520.0L1606.1,611.0M1152.9,520.0L1449.4,862.6M327.2,360.8L217.1,400.0M581.8,900.4L436.6,1150.0M431.2,319.3Q762.0,183.0 1092.1,323.7M436.6,1150.0Q618.3,1024.9 849.2,998.0"/>
+
+
+
+<path fill="#75FB62" fill-rule="evenodd" d="M308,342a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM346,342a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="#75FB62" fill-rule="evenodd" d="M1071,347a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM1109,347a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="#75FB62" fill-rule="evenodd" d="M538,852a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM576,852a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="#75FB62" fill-rule="evenodd" d="M982,826a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM1020,826a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="#75FB62" fill-rule="evenodd" d="M833,993a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM871,993a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="#75FB62" fill-rule="evenodd" d="M1111,1045a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM1149,1045a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="#75FB62" fill-rule="evenodd" d="M1414,905a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM1452,905a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="#75FB62" fill-rule="evenodd" d="M1589,622a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM1627,622a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="#75FB62" fill-rule="evenodd" d="M1784,838a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM1822,838a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="#75FB62" fill-rule="evenodd" d="M1544,1066a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM1582,1066a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="#75FB62" fill-rule="evenodd" d="M887,1261a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM925,1261a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="#75FB62" fill-rule="evenodd" d="M1209,1261a72,72 0 1,0 144,0a72,72 0 1,0 -144,0ZM1247,1261a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/>
+<g transform="translate(656.7 410)" fill="#fff"><polyline points="0,0 140,140 0,280" fill="none" stroke="#fff" stroke-width="38" stroke-linejoin="miter" stroke-linecap="butt"/><rect x="200" y="255.4" width="200" height="38"/></g>
+</g></g></g><line x1="172" y1="246" x2="600" y2="1708" stroke="#26A512" stroke-width="38"/><circle cx="172" cy="246" r="72" fill="#26A512"/><rect x="435" y="1689.0" width="330" height="38" fill="#26A512"/></g></svg></a>
             <div class="nav-links">
                 <a href="#about">About us</a>
                 <a href="#resources">Get started</a>
@@ -237,7 +279,7 @@
 
     <main>
         <section id="hero">
-            <h1>> CyberJU</h1>
+            <h1 class="hero-logo"><svg role="img" aria-label="CyberJU" viewBox="35 -770 4148 1040"><use href="#wm-text"/><use href="#wm-cursor" class="blink"/></svg></h1>
             <p>The official student association for cybersecurity at Jönköping University.</p>
             <div class="btn-container">
                 <a href="https://discord.com/invite/AKERyEqwbn" class="btn">[ Join Discord ]</a>
@@ -247,14 +289,14 @@
 
         <section id="about">
             <h2>> About the association</h2>
-            <p>CyberJU builds practical skills in IT and cybersecurity outside the lecture hall. We organize CTF competitions, hackathons and workshops. We're also proud to have placed in the top 5 in Säkerhets-SM.</p>
+            <p>CyberJU builds practical skills in IT and cybersecurity outside the lecture hall. We organize CTF competitions, hackathons and workshops. We're also proud to have placed in the top 5 in SäkerhetsSM.</p>
             <br>
             <p style="color: var(--text-main); font-weight: bold;">[!] No prior experience required. We welcome all students, from complete beginners to experts.</p>
             <br>
             <h3>The board</h3>
             <ul>
-                <li>Chairperson: [Name]</li>
-                <li>CTF Lead: [Name]</li>
+                <li>President: Mohamed Khodr</li>
+                <li></li>
                 <li>[Role]: [Name]</li>
                  <li>more roles coming soon</li>
             </ul>
@@ -301,7 +343,7 @@
 
         <section id="sponsors">
             <h2>> Sponsors</h2>
-            <p>CyberJU brings together the most driven IT security talents at JU (Jönköping University). Our members continuously prove their skills, and our current top 5 placement in Säkerhets-SM is strong evidence of that.</p>
+            <p>CyberJU brings together the most driven IT security talents at Jönköping University. We were formerly known as pwnJU.</p>
             <br>
             <p>We are looking for corporate sponsors to fund server hosting for our CTF environments, prizes and events. As a sponsor, you get direct employer branding and contact with the industry's future experts.</p>
             <br>
